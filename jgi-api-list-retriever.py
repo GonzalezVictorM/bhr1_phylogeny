@@ -31,7 +31,7 @@ params = {
 # Authentication headers
 headers = {
     "accept": "application/json",
-    "Authorization": "Bearer /api/sessions/646e50cb7f0a1259fd56582aaf8e08db"  # Replace with your personal token or use os.getenv("JGI_TOKEN")
+    "Authorization":   # Replace with your personal token or use os.getenv("JGI_TOKEN")
 }
 
 def save_files():
