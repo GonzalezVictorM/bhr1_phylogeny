@@ -2,6 +2,8 @@ import requests
 import json
 import os
 
+print("test")
+
 # Configuration
 BASE_URL = "https://files.jgi.doe.gov/mycocosm_file_list/"
 ORGANISM_ID = "Dicsqu464_2"
