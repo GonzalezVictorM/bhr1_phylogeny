@@ -25,4 +25,4 @@ Check for files and extract.
 Cleans up the names of the file to only contain the portal name and the protein names. Alkso creates a log to check if it was done correctly.
 
 ## custom-fasta-cleaner.py
-Cleans up the remaining fasta files .
+Cleans up the remaining fasta files.
