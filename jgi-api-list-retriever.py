@@ -17,7 +17,7 @@ JSON_FOLDER = "json_files"  # Folder for all JSON files
 # Authentication headers
 headers = {
     "accept": "application/json",
-    "Authorization": "Bearer /api/sessions/5313926ee3c65b10b664e94d80f295bb"  # Replace with your token or os.getenv("JGI_TOKEN")
+    "Authorization": "test"  # Replace with your token or os.getenv("JGI_TOKEN")
 }
 
 # -------------------------

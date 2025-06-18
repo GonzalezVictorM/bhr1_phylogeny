@@ -5,7 +5,23 @@ Analyze the phylogeny of the bhr1 gene
 Contains the instructions to get the list of mycocosm portals with published genomes.
 
 ## jgi-api-list-retriever.py
-Retrieves a csv with all the files in this portals that are related to filtered protein models. It is necessary sorth through this csv to select the ones we are interested in. we should end up with one file per portal.
+Retrieves a csv with all the files in this portals. It is necessary sorth through this csv to select the ones we are interested in using the R code. we should end up with one file per portal.
 
-## jgi_file_list.csv
-This file should be created manueally with column called portal, a colimn called file_name,
+## phylogeny-wrangling.R
+Organizes the phylogeny based on the recovered tax_IDs from mycocosm.
+
+## file-list-wrangling.R
+Selects the files that have proteomes, specifically in the Filtered Best section of Mycocosm. It will also highlight portals with none of this files. This is most likely due to the API.
+
+After running the previous codes, the selection must continue manually as it is important to evaluate a proper distribution of species across genera,family, and orders.
+
+## Pending
+The goals was to make a code to do a batch request for the files and then a batch download, but I am on a bit of a rush so I am doing it manually as I already had most ofd the proteomes.
+
+## extract-files.py
+Check for files and extract.
+
+## clean-fasta-files.py
+Cleans up the names of the file to only contain the portal name and the protein names. Alkso creates a log to check if it was done correctly.
+
+## custom-fasta-cleaner.py
