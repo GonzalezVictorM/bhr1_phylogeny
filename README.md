@@ -37,5 +37,7 @@ Takes the TF pfam hmm models from the Pfam-A.hmm file downloaded from interpro.
 SLURM batch request to run hmmscan of the 37 TF families on all the proteomes.
 
 ## fetch-tf-proteomes.py
-using the domtblout files from the hmmscan of the 37 TF families, it keeps only proteins that match those descriptions.
+Using the domtblout files from the hmmscan of the 37 TF families, it keeps only proteins that match those descriptions.
 
+
+Next steps are to run the test orthofinder with only_TFs and full proteomes
