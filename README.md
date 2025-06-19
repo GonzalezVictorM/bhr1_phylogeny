@@ -26,3 +26,6 @@ Cleans up the names of the file to only contain the portal name and the protein 
 
 ## custom-fasta-cleaner.py
 Cleans up the remaining fasta files.
+
+## complete-pfam-accession.py
+Before running this code, you need to download the Pfam-A.hmm file from the Hmmer server. I will try to automate this later. The code will extract the complete accession numbers with the decimals as it seems they are necessary for hmmfetch command. in my case I have a list of TF pfams from Todd´s paper on fungal TFs: Prevalence of transcription factors in ascomycete and basidiomycete fungi. 
