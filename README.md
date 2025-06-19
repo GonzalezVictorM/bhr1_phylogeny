@@ -19,7 +19,7 @@ After running the previous codes, the selection must continue manually as it is 
 The goals was to make a code to do a batch request for the files and then a batch download, but I am on a bit of a rush so I am doing it manually as I already had most ofd the proteomes.
 
 ## extract-files.py
-Check for files and extract.
+Check for compressed files and extract them.
 
 ## clean-fasta-files.py
 Cleans up the names of the file to only contain the portal name and the protein names. Alkso creates a log to check if it was done correctly.
@@ -28,4 +28,14 @@ Cleans up the names of the file to only contain the portal name and the protein 
 Cleans up the remaining fasta files.
 
 ## complete-pfam-accession.py
-Before running this code, you need to download the Pfam-A.hmm file from the Hmmer server. I will try to automate this later. The code will extract the complete accession numbers with the decimals as it seems they are necessary for hmmfetch command. in my case I have a list of TF pfams from Todd´s paper on fungal TFs: Prevalence of transcription factors in ascomycete and basidiomycete fungi. 
+Before running this code, you need to download the Pfam-A.hmm file from the Hmmer server. I will try to automate this later. The code will extract the complete accession numbers with the decimals as it seems they are necessary for hmmfetch command. in my case I have a list of TF pfams from Todd´s paper on fungal TFs: Prevalence of transcription factors in ascomycete and basidiomycete fungi.
+
+## fetch-tf-hmms.sh
+Takes the TF pfam hmm models from the Pfam-A.hmm file downloaded from interpro.
+
+## batch-hmmscan.sh
+SLURM batch request to run hmmscan of the 37 TF families on all the proteomes.
+
+## fetch-tf-proteomes.py
+using the domtblout files from the hmmscan of the 37 TF families, it keeps only proteins that match those descriptions.
+
