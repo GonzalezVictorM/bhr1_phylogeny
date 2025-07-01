@@ -39,5 +39,14 @@ SLURM batch request to run hmmscan of the 37 TF families on all the proteomes.
 ## fetch-tf-proteomes.py
 Using the domtblout files from the hmmscan of the 37 TF families, it keeps only proteins that match those descriptions.
 
+## of-tfs-test.sh
+Test run of orthofinder in a selected set of proteomes (only with TF domain containing proteins).
 
-Next steps are to run the test orthofinder with only_TFs and full proteomes
+## of-tfs.sh and of-all.sh
+Runs orthofinder on all 150 proteomes. Do not be like me and remember to clean the extremely long or short proteins from the proteomes beforehand. The next two codes do that.
+
+## proteome-cleaner.R
+Uses an uppper and lower length limit to get rid of potentially incorrect protein models. I used 50 <= length <= 10,000 since I am working with TFs which are mostly standard length. However, if you want to study a different set, you can use different limits. There is no need to clean the Tfs onlöy files as those have been ran through hmmscan/search.
+
+## proteome-joiner.R
+Joins all cleaned up proteomes.
