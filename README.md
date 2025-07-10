@@ -50,3 +50,6 @@ Uses an uppper and lower length limit to get rid of potentially incorrect protei
 
 ## proteome-joiner.R
 Joins all cleaned up proteomes.
+
+## plot-phylogeny-tree.R
+Plots the phylogeny tree using the described tree.
