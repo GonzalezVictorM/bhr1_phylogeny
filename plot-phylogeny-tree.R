@@ -13,11 +13,14 @@ library(ape)
 # Define input paths
 # -----------------------------
 phyl_dir <- "phylogeny_analysis"
-tree_dir <- file.path(phyl_dir, "fasttree_files")
+pipeline_dir <-file.path(phyl_dir, "geneious")
+tree_dir <- file.path(pipeline_dir, "fasttree_files")
+#tree_dir <- file.path(pipeline_dir, "iqtree_files")
 septin_file <- file.path(phyl_dir, "Septins.csv")
-tree_file <- file.path(tree_dir, "OG0000195_clean_GtpA_mafft_FastTree.newick")
+tree_file <- file.path(tree_dir, "OG0000195_clean_Myo2_mafft_80trim_puhti_fasttree.newick")
 tax_file <- "proteome_list_orthofinder.csv"
 tax_outgroup_file <- file.path(phyl_dir,"outgroup_phylogeny.csv")
+output_tree <- file.path(tree_dir,"OG0000195_clean_Myo2_mafft_80trim_puhti_fasttree.pdf")
 
 # Check if files exist
 if (!file.exists(tree_file)) stop("Tree file not found: ", tree_file)
@@ -98,7 +101,7 @@ cat("Plotted tree with node numbers in tree_with_node_numbers.pdf\n")
 # -----------------------------
 # Use the original tree with updated tip labels
 tree_phylo <- tree  # Changed from tree_gg@phylo
-tip_metadata <- tree_gg$data %>% filter(isTip) %>% select(label, phylum)
+tip_metadata <- tree_gg$data %>% filter(isTip) %>% select(label, class) ### Modify here for class or phylum
 
 # Custom descendant function
 getDescendants <- function(tree, node) {
@@ -126,7 +129,7 @@ for (node in internal_nodes) {
   tip_labels <- tree_phylo$tip.label[tip_desc]
   phyla <- tip_metadata %>%
     filter(label %in% tip_labels) %>%
-    pull(phylum) %>%
+    pull(class) %>% ### Modify here for class or phylum
     unique()
   
   if (length(phyla) == 1 && !is.na(phyla)) {
@@ -159,8 +162,8 @@ cat("Found", length(filtered_clades), "non-nested phylum-pure clades.\n")
 # Plot with clade labels
 # -----------------------------
 p <- tree_gg +
-  geom_tippoint(aes(color = phylum), size = 2) +
-  geom_tiplab(size = 2, hjust = -0.1) +
+  geom_tippoint(aes(color = phylum), size = 1.5) +
+  geom_tiplab(size = 1.5, hjust = -0.1) +
   #theme_tree2() +
   theme(legend.position = "right")
 
@@ -169,4 +172,4 @@ for (clade in filtered_clades) {
 }
 
 print(p)
-ggsave("tree_with_clade_labels.pdf", plot = p, width = 20, height = 45)
+ggsave(output_tree, plot = p, width = 20, height = 50, limitsize = FALSE)
