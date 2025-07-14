@@ -7,6 +7,9 @@ Contains the instructions to get the list of mycocosm portals with published gen
 ## jgi-api-list-retriever.py
 Retrieves a csv with all the files in this portals. It is necessary sorth through this csv to select the ones we are interested in using the R code. we should end up with one file per portal.
 
+## package_installer.R
+Installs all packages you will need from R.
+
 ## phylogeny-wrangling.R
 Organizes the phylogeny based on the recovered tax_IDs from mycocosm.
 
